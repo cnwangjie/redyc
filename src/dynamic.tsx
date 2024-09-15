@@ -67,9 +67,14 @@ export const DynamicCreateElementContainer: FC<{
       const c = child.values().next().value!
       return c.createElement(args) || (() => {})
     }
-    const element = cloneElement(args, {
-      key: `dynamic-create-element-${Math.random()}`,
-    })
+    const element = cloneElement(
+      args,
+      {
+        ...args.props,
+        key: `dynamic-element-${Math.random().toString(36).slice(2)}`,
+      },
+      args.props.children,
+    )
     elements.add(element)
     forceUpdate()
     return () => {
@@ -99,7 +104,7 @@ export const DynamicCreateElementContainer: FC<{
   return (
     <DynamicCreateElementContext.Provider value={value}>
       {children}
-      [...elements.values()]
+      {[...elements.values()]}
     </DynamicCreateElementContext.Provider>
   )
 }

@@ -1,6 +1,6 @@
 {
   "name": "redyc",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "types/index.d.ts",
@@ -12,13 +12,28 @@
     "build:esm": "tsc -p . -m ESNext --outDir dist/esm",
     "build:cjs": "tsc -p . -m commonjs --outDir dist/cjs",
     "test": "vitest",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "dev": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@chromatic-com/storybook": "^1.9.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/joy": "^5.0.0-beta.48",
+    "@storybook/addon-essentials": "^8.3.0",
+    "@storybook/addon-interactions": "^8.3.0",
+    "@storybook/addon-links": "^8.3.0",
+    "@storybook/addon-onboarding": "^8.3.0",
+    "@storybook/blocks": "^8.3.0",
+    "@storybook/react": "^8.3.0",
+    "@storybook/react-vite": "^8.3.0",
+    "@storybook/test": "^8.3.0",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.5",
     "react": "^18.3.1",
+    "storybook": "^8.3.0",
     "typescript": "^5.6.2",
     "vitest": "^2.0.2"
   },

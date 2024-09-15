@@ -81,3 +81,5 @@ types
 
 tmp
 .DS_Store
+
+*storybook.log
